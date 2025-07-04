@@ -62,6 +62,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/adminTransaksi', [AdminTransaksiController::class, 'index'])->name('adminTransaksi.index');
     Route::get('/adminTransaksi/{id}/bukti_transaksi', [AdminTransaksiController::class, 'showImage'])->name('adminTransaksi.image');
     Route::get('/Messages', [ChatController::class, 'index'])->name('chat.adminmessages');
+
+    Route::get('/delivery/{id}/image', [DeliveryController::class, 'showImage']);
+
 });
 
 require __DIR__ . '/auth.php';
